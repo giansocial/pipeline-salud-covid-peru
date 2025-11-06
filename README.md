@@ -1,24 +1,22 @@
-# Pipeline Salud COVID - Peru
+# Pipeline Salud COVID - Perú
 
-Soy Gian Cruz.
+¿Sabías que Perú tuvo la tasa de mortalidad por COVID-19 más alta del mundo? Con más de 220,000 muertes oficiales en un país de 33 millones, la tasa de letalidad superó a la de cualquier otro país de Latinoamérica. Sin embargo, la velocidad de vacunación fue una de las más rápidas de la región una vez que arrancó la campaña.
 
-Pipeline que procesa datos de COVID-19 en Peru y Latinoamerica usando el dataset abierto de Our World in Data (OWID). Analiza la evolucion de la pandemia, tasa de letalidad, progreso de vacunacion, deteccion de olas y comparacion regional.
+Soy Gian Cruz. Construí este pipeline para procesar el dataset abierto de Our World in Data (OWID), filtrar datos de Perú y sus vecinos latinoamericanos, y generar análisis que no existen en los dashboards públicos: detección automática de olas por umbral de casos suavizados, tasa de letalidad mensual, comparación de mortalidad per cápita entre países LATAM y progreso de vacunación.
 
-Peru fue el pais con la mayor tasa de mortalidad por COVID-19 per capita del mundo. Este proyecto documenta la cronologia de la pandemia en el pais y lo compara con sus vecinos de la region.
-
-## Que hace
+## Qué hace
 
 - Descarga el dataset OWID completo (o carga CSV local)
-- Filtra datos de Peru y paises LATAM
+- Filtra datos de Perú y países LATAM
 - Limpia y rellena gaps temporales (forward fill en acumulados)
-- Genera resumenes semanales y mensuales
+- Genera resúmenes semanales y mensuales
 - Calcula tasa de letalidad (CFR) mensual
-- Rastrea progreso de vacunacion
+- Rastrea progreso de vacunación
 - Detecta olas de COVID por umbral de casos suavizados
-- Compara mortalidad per capita entre paises LATAM
-- Carga a SQLite con indices
+- Compara mortalidad per cápita entre países LATAM
+- Carga a SQLite con índices
 
-## Instalacion
+## Instalación
 
 ```bash
 python -m venv venv
@@ -81,9 +79,9 @@ Peru had the highest COVID-19 mortality rate per capita worldwide. This project 
 
 ## Fuentes de datos
 
-| Fuente | Descripcion | Enlace |
+| Fuente | Descripción | Enlace |
 |--------|-------------|--------|
 | Our World in Data - COVID-19 | Dataset global de COVID-19 actualizado diariamente | [https://github.com/owid/covid-19-data](https://github.com/owid/covid-19-data) |
-| OWID - Explorador COVID | Visualizacion interactiva de datos | [https://ourworldindata.org/coronavirus](https://ourworldindata.org/coronavirus) |
-| MINSA - Datos Abiertos | Ministerio de Salud - casos positivos Peru | [https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa](https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa) |
-| INS Peru | Instituto Nacional de Salud - vigilancia epidemiologica | [https://web.ins.gob.pe/](https://web.ins.gob.pe/) |
+| OWID - Explorador COVID | Visualización interactiva de datos | [https://ourworldindata.org/coronavirus](https://ourworldindata.org/coronavirus) |
+| MINSA - Datos Abiertos | Ministerio de Salud - casos positivos Perú | [https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa](https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa) |
+| INS Perú | Instituto Nacional de Salud - vigilancia epidemiológica | [https://web.ins.gob.pe/](https://web.ins.gob.pe/) |
