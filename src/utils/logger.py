@@ -1,17 +1,18 @@
 import logging
-import sys
-from src.config.settings import LOG_DIR
+import os
 
 
-def setup_logging(level: str = "INFO") -> None:
-    fmt = "%(asctime)s [%(levelname)s] %(name)s - %(message)s"
-    handlers = [
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler(LOG_DIR / "pipeline.log", encoding="utf-8"),
-    ]
-    logging.basicConfig(
-        level=getattr(logging, level.upper(), logging.INFO),
-        format=fmt,
-        datefmt="%Y-%m-%d %H:%M:%S",
-        handlers=handlers,
-    )
+def get_logger(name):
+    level = os.getenv("LOG_LEVEL", "INFO").upper()
+    logger = logging.getLogger(name)
+
+    if not logger.handlers:
+        handler = logging.StreamHandler()
+        handler.setFormatter(
+            logging.Formatter("[%(levelname)s] %(asctime)s - %(name)s: %(message)s",
+                              datefmt="%H:%M:%S")
+        )
+        logger.addHandler(handler)
+
+    logger.setLevel(getattr(logging, level, logging.INFO))
+    return logger

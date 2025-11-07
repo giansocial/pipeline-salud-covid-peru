@@ -15,9 +15,9 @@ from src.transform.enricher import (
 )
 from src.quality.validators import run_quality_report
 from src.load.warehouse import init_db, load_to_db
-from src.utils.logger import setup_logging
+from src.utils.logger import get_logger
 
-log = logging.getLogger(__name__)
+log = get_logger(__name__)
 
 
 def run_pipeline(source: str = "download", filepath: Path = None) -> dict:
@@ -79,7 +79,6 @@ def main():
     parser.add_argument("--source", choices=["download", "file"], default="download")
     parser.add_argument("--file", type=Path, help="CSV local")
     args = parser.parse_args()
-    setup_logging()
     result = run_pipeline(args.source, args.file)
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
