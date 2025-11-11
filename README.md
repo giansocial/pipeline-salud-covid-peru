@@ -78,6 +78,16 @@ pipeline-salud-covid-peru/
 | MINSA - Datos Abiertos | Ministerio de Salud - casos positivos Perú | [https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa](https://www.datosabiertos.gob.pe/dataset/casos-positivos-por-covid-19-ministerio-de-salud-minsa) |
 | INS Perú | Instituto Nacional de Salud - vigilancia epidemiológica | [https://web.ins.gob.pe/](https://web.ins.gob.pe/) |
 
+## Visualizaciones
+
+Resultados del analisis exploratorio (notebook completo en `notebooks/`):
+
+![Casos diarios con deteccion de olas](docs/images/grafico_01.png)
+
+![Mortalidad por millon en LATAM](docs/images/grafico_02.png)
+
+![Casos vs progreso de vacunacion](docs/images/grafico_03.png)
+
 ## Licencia
 
 MIT
