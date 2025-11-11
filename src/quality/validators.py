@@ -1,7 +1,4 @@
-import logging
 import pandas as pd
-
-log = logging.getLogger(__name__)
 
 
 def check_completeness(df: pd.DataFrame, cols: list[str]) -> dict:
