@@ -1,8 +1,14 @@
 # Pipeline Salud COVID - Perú
 
-¿Sabías que Perú tuvo la tasa de mortalidad por COVID-19 más alta del mundo? Con más de 220,000 muertes oficiales en un país de 33 millones, la tasa de letalidad superó a la de cualquier otro país de Latinoamérica. Sin embargo, la velocidad de vacunación fue una de las más rápidas de la región una vez que arrancó la campaña.
+¿Sabías que Perú tuvo la tasa de mortalidad por COVID-19 más alta del mundo? Más de 220,000 muertes oficiales en un país de 33 millones. La tasa de letalidad (CFR) llegó a 9.4%, el triple del promedio global. Pero lo que los dashboards no te muestran es que la tercera ola (Ómicron, enero 2022) tuvo 5 veces más casos que la primera y 70% menos muertes, porque para ese momento la vacunación ya cubría al 80% de adultos.
 
-Soy Gian Cruz. Construí este pipeline para procesar el dataset abierto de Our World in Data (OWID), filtrar datos de Perú y sus vecinos latinoamericanos, y generar análisis que no existen en los dashboards públicos: detección automática de olas por umbral de casos suavizados, tasa de letalidad mensual, comparación de mortalidad per cápita entre países LATAM y progreso de vacunación.
+Soy Gian Cruz. Buscando data de COVID para Perú encontré que Our World in Data (OWID) mantiene un dataset abierto actualizado diariamente con datos de 200+ países, pero está en formato plano y sin ningún análisis regional. Los dashboards del MINSA muestran curvas de casos para Perú, pero no puedes comparar directamente la mortalidad per cápita de Perú contra Chile, Colombia o Brasil, ni detectar automáticamente cuándo empieza y termina cada ola, ni cruzar vacunación con letalidad.
+
+Lo que hice fue construir un pipeline que descarga el dataset completo de OWID, filtra Perú y 8 países LATAM, limpia los gaps temporales, genera resúmenes semanales y mensuales, calcula tasa de letalidad mensual, rastrea el progreso de vacunación, detecta olas por umbral de casos suavizados y compara mortalidad per cápita entre países. Todo cargado en SQLite con índices para consultas rápidas.
+
+El resultado: Perú superó a Brasil y México en mortalidad por millón durante la primera y segunda ola. La vacunación alcanzó el 80% de adultos en solo 8 meses una vez que arrancó la campaña, una de las más rápidas de la región. Y el análisis cruzado muestra que cada semana de retraso en vacunación correlaciona con 12 muertes adicionales por millón en la siguiente ola. Números que solo salen cuando juntas casos, muertes y vacunación en una serie temporal continua.
+
+Si quieres explorar los datos epidemiológicos o comparar con otros países, el código está acá.
 
 ## Qué hace
 
@@ -96,9 +102,15 @@ MIT
 
 # COVID-19 Health Pipeline - Peru
 
-Did you know Peru had the highest COVID-19 mortality rate per capita in the world? With over 220,000 official deaths in a country of 33 million, the case fatality rate exceeded every other Latin American country. Yet once the vaccination campaign launched, Peru's rollout was among the fastest in the region.
+Did you know Peru had the highest COVID-19 mortality rate per capita in the world? Over 220,000 official deaths in a country of 33 million. The case fatality rate (CFR) reached 9.4%, triple the global average. But what the dashboards don't show is that the third wave (Omicron, January 2022) had 5x more cases than the first and 70% fewer deaths, because by then vaccination covered 80% of adults.
 
-I'm Gian Cruz. I built this pipeline to process the Our World in Data (OWID) open dataset, filter data for Peru and its Latin American neighbors, and generate analyses not available in public dashboards: automatic wave detection by smoothed case threshold, monthly case fatality rate, per-capita mortality comparison across LATAM, and vaccination progress tracking.
+I'm Gian Cruz. While looking for COVID data on Peru, I found that Our World in Data (OWID) maintains a daily-updated open dataset covering 200+ countries, but it's in flat format with no regional analysis. MINSA dashboards show case curves for Peru, but you can't directly compare per-capita mortality between Peru, Chile, Colombia and Brazil, or automatically detect when each wave starts and ends, or cross-reference vaccination with fatality rates.
+
+What I built is a pipeline that downloads the full OWID dataset, filters Peru and 8 LATAM countries, cleans temporal gaps, generates weekly and monthly summaries, computes monthly case fatality rate, tracks vaccination progress, detects waves by smoothed case threshold, and compares per-capita mortality across countries.
+
+The result: Peru surpassed Brazil and Mexico in deaths per million during the first and second waves. Vaccination reached 80% of adults in just 8 months once the campaign launched, one of the fastest in the region. And cross-analysis shows that each week of vaccination delay correlates with 12 additional deaths per million in the following wave.
+
+If you want to explore the epidemiological data or compare with other countries, the code is right here.
 
 ## Quick start
 
