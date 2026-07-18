@@ -6,21 +6,9 @@ Soy Gian Cruz. Buscando data de COVID para Perú encontré que Our World in Data
 
 Lo que hice fue construir un pipeline que descarga el dataset completo de OWID, filtra Perú y 8 países LATAM, limpia los gaps temporales, genera resúmenes semanales y mensuales, calcula tasa de letalidad mensual, rastrea el progreso de vacunación, detecta olas por umbral de casos suavizados y compara mortalidad per cápita entre países. Todo cargado en SQLite con índices para consultas rápidas.
 
-El resultado: Perú superó a Brasil y México en mortalidad por millón durante la primera y segunda ola. La vacunación alcanzó el 80% de adultos en solo 8 meses una vez que arrancó la campaña, una de las más rápidas de la región. Y el análisis cruzado muestra que cada semana de retraso en vacunación correlaciona con 12 muertes adicionales por millón en la siguiente ola. Números que solo salen cuando juntas casos, muertes y vacunación en una serie temporal continua.
+Los números hablan por sí solos. Perú superó a Brasil y México en mortalidad por millón durante la primera y segunda ola. La vacunación alcanzó el 80% de adultos en solo 8 meses una vez que arrancó la campaña, una de las más rápidas de la región. Y el análisis cruzado muestra que cada semana de retraso en vacunación correlaciona con 12 muertes adicionales por millón en la siguiente ola. Números que solo salen cuando juntas casos, muertes y vacunación en una serie temporal continua.
 
 Si quieres explorar los datos epidemiológicos o comparar con otros países, el código está acá.
-
-## Qué hace
-
-- Descarga el dataset OWID completo (o carga CSV local)
-- Filtra datos de Perú y países LATAM
-- Limpia y rellena gaps temporales (forward fill en acumulados)
-- Genera resúmenes semanales y mensuales
-- Calcula tasa de letalidad (CFR) mensual
-- Rastrea progreso de vacunación
-- Detecta olas de COVID por umbral de casos suavizados
-- Compara mortalidad per cápita entre países LATAM
-- Carga a SQLite con índices
 
 ## Instalación
 
@@ -108,7 +96,7 @@ I'm Gian Cruz. While looking for COVID data on Peru, I found that Our World in D
 
 What I built is a pipeline that downloads the full OWID dataset, filters Peru and 8 LATAM countries, cleans temporal gaps, generates weekly and monthly summaries, computes monthly case fatality rate, tracks vaccination progress, detects waves by smoothed case threshold, and compares per-capita mortality across countries.
 
-The result: Peru surpassed Brazil and Mexico in deaths per million during the first and second waves. Vaccination reached 80% of adults in just 8 months once the campaign launched, one of the fastest in the region. And cross-analysis shows that each week of vaccination delay correlates with 12 additional deaths per million in the following wave.
+The numbers speak for themselves. Peru surpassed Brazil and Mexico in deaths per million during the first and second waves. Vaccination reached 80% of adults in just 8 months once the campaign launched, one of the fastest in the region. And cross-analysis shows that each week of vaccination delay correlates with 12 additional deaths per million in the following wave.
 
 If you want to explore the epidemiological data or compare with other countries, the code is right here.
 
