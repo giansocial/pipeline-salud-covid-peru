@@ -4,9 +4,9 @@
 
 Soy Gian Cruz. Buscando data de COVID para Perú encontré que Our World in Data (OWID) mantiene un dataset abierto actualizado diariamente con datos de 200+ países, pero está en formato plano y sin ningún análisis regional. Los dashboards del MINSA muestran curvas de casos para Perú, pero no puedes comparar directamente la mortalidad per cápita de Perú contra Chile, Colombia o Brasil, ni detectar automáticamente cuándo empieza y termina cada ola, ni cruzar vacunación con letalidad.
 
-Lo que hice fue construir un pipeline que descarga el dataset completo de OWID, filtra Perú y 8 países LATAM, limpia los gaps temporales, genera resúmenes semanales y mensuales, calcula tasa de letalidad mensual, rastrea el progreso de vacunación, detecta olas por umbral de casos suavizados y compara mortalidad per cápita entre países. Todo cargado en SQLite con índices para consultas rápidas.
+Lo que hice fue construir un pipeline que descarga el dataset completo de OWID, filtra Perú y 9 países LATAM, limpia los gaps temporales, genera resúmenes semanales y mensuales, calcula tasa de letalidad mensual, rastrea el progreso de vacunación, detecta olas por umbral de casos suavizados y compara mortalidad per cápita entre países. Todo cargado en SQLite con índices para consultas rápidas.
 
-Los números hablan por sí solos. Perú superó a Brasil y México en mortalidad por millón durante la primera y segunda ola. La vacunación alcanzó el 80% de adultos en solo 8 meses una vez que arrancó la campaña, una de las más rápidas de la región. Y el análisis cruzado muestra que cada semana de retraso en vacunación correlaciona con 12 muertes adicionales por millón en la siguiente ola. Números que solo salen cuando juntas casos, muertes y vacunación en una serie temporal continua.
+Los números hablan por sí solos. Perú superó a Brasil y México en mortalidad por millón durante la primera y segunda ola. La vacunación alcanzó el 80% de adultos en solo 8 meses una vez que arrancó la campaña, una de las más rápidas de la región. Números que solo salen cuando juntas casos, muertes y vacunación en una serie temporal continua.
 
 Si quieres explorar los datos epidemiológicos o comparar con otros países, el código está acá.
 
@@ -94,9 +94,9 @@ Did you know Peru had the highest COVID-19 mortality rate per capita in the worl
 
 I'm Gian Cruz. While looking for COVID data on Peru, I found that Our World in Data (OWID) maintains a daily-updated open dataset covering 200+ countries, but it's in flat format with no regional analysis. MINSA dashboards show case curves for Peru, but you can't directly compare per-capita mortality between Peru, Chile, Colombia and Brazil, or automatically detect when each wave starts and ends, or cross-reference vaccination with fatality rates.
 
-What I built is a pipeline that downloads the full OWID dataset, filters Peru and 8 LATAM countries, cleans temporal gaps, generates weekly and monthly summaries, computes monthly case fatality rate, tracks vaccination progress, detects waves by smoothed case threshold, and compares per-capita mortality across countries.
+What I built is a pipeline that downloads the full OWID dataset, filters Peru and 9 LATAM countries, cleans temporal gaps, generates weekly and monthly summaries, computes monthly case fatality rate, tracks vaccination progress, detects waves by smoothed case threshold, and compares per-capita mortality across countries.
 
-The numbers speak for themselves. Peru surpassed Brazil and Mexico in deaths per million during the first and second waves. Vaccination reached 80% of adults in just 8 months once the campaign launched, one of the fastest in the region. And cross-analysis shows that each week of vaccination delay correlates with 12 additional deaths per million in the following wave.
+The numbers speak for themselves. Peru surpassed Brazil and Mexico in deaths per million during the first and second waves. Vaccination reached 80% of adults in just 8 months once the campaign launched, one of the fastest in the region.
 
 If you want to explore the epidemiological data or compare with other countries, the code is right here.
 
