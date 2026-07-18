@@ -1,4 +1,3 @@
-import pytest
 import pandas as pd
 from src.transform.cleaner import clean_covid_data, fill_missing_daily
 

@@ -3,13 +3,11 @@ import json
 import time
 from pathlib import Path
 
-import pandas as pd
-
-from src.config.settings import RAW_DIR, PROCESSED_DIR
+from src.config.settings import PROCESSED_DIR
 from src.extract.owid_client import download_owid_csv, filter_country, filter_latam, load_from_file
 from src.transform.cleaner import clean_covid_data, fill_missing_daily
 from src.transform.enricher import (
-    weekly_summary, monthly_summary, case_fatality_rate,
+    weekly_summary, case_fatality_rate,
     vaccination_progress, compare_latam, wave_detection,
 )
 from src.quality.validators import run_quality_report
